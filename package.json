@@ -1,0 +1,18 @@
+{
+  "name": "vscode-typescript-next",
+  "private": true,
+  "version": "3.6.0-dev.20190608",
+  "description": "",
+  "scripts": {
+    "bump-version": "npm install typescript@next && node ./build/updatePackageVersion.js"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "MIT",
+  "dependencies": {
+    "typescript": "^3.6.0-dev.20190608"
+  },
+  "devDependencies": {
+    "@types/node": "^12.0.7"
+  }
+}
