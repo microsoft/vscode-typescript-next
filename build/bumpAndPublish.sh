@@ -3,7 +3,7 @@ npm run bump-version
 result=$?
 
 if [ $result -eq 0 ]; then
-    npx vsce publish $f --pat "$(marketplace_key)" --noVerify
+    npx vsce publish $f --pat $1 --noVerify
     exit
 elif [ $result -eq 1 ]; then
     echo "Skipping publishing new version"

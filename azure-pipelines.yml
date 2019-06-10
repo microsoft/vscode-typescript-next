@@ -8,5 +8,5 @@ steps:
 - script: |
     set -e
     chmod +x ./build/bumpAndPublish.sh
-    ./build/bumpAndPublish.sh
+    ./build/bumpAndPublish.sh "$(marketplace_key)"
   displayName: 'Publish to marketplace'
