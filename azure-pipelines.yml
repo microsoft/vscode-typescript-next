@@ -10,11 +10,11 @@ steps:
     secureFile: vscode_typescript_next_deploy_key
   displayName: 'Get the deploy key'
 
-- script: |
+- bash: |
     set -e
 
     chmod +x ./build/bumpAndPublish.sh
-    output="$(./build/bumpAndPublish.sh '$(marketplace_key)' 2>&1)"
+    ./build/bumpAndPublish.sh '$(marketplace_key)'
     result=$?
 
     if [ $result -eq 0 ]; then
