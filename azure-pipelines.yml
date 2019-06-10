@@ -10,5 +10,6 @@ pool:
 steps:
 - script: |
     set -e
-    npm run bump-version && npx vsce publish $f --pat "$(marketplace_key)" --noVerify
+    chmod +x ./build/bumpAndPublish.sh
+    ./build/bumpAndPublish.sh
   displayName: 'Publish to marketplace'
