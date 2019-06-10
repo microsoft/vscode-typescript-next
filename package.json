@@ -5,6 +5,9 @@
   "publisher": "ms-vscode",
   "version": "3.5.1",
   "description": "Enables typescript@next as VS Code's built-in TypeScript version",
+  "engines": {
+    "vscode": "^1.36.0"
+  },
   "scripts": {
     "bump-version": "npm install typescript@next && node ./build/updatePackageVersion.js"
   },
