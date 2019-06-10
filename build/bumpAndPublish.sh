@@ -2,6 +2,9 @@
 npm run bump-version
 result=$?
 
+EXPECTED_ERROR_CODE=1
+UNEXPECTED_ERROR_CODE=2
+
 if [ $result -eq 0 ]; then
     output="$(npx vsce publish $f --pat $1 --noVerify 2>&1)"
     publishResult=$?
@@ -10,15 +13,15 @@ if [ $result -eq 0 ]; then
         exit
     elif [[ $output =~ "already exists" ]]; then
         echo "Publish failed but expected. Skipping publishing same version."
-        exit
+        exit $EXPECTED_ERROR_CODE
     else
         echo "Error publishing"
-        exit 1
+        exit $UNEXPECTED_ERROR_CODE
     fi;
 elif [ $result -eq 1 ]; then
     echo "Skipping publishing same version"
-    exit
+    exit $EXPECTED_ERROR_CODE
 else
     echo "Error. Exited with $result"
-    exit 1
+    exit $UNEXPECTED_ERROR_CODE
 fi

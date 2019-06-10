@@ -5,8 +5,34 @@ pool:
   vmImage: 'ubuntu-latest'
 
 steps:
+- task: DownloadSecureFile@1
+  inputs:
+    secureFile: vscode_typescript_next_deploy_key
+  displayName: 'Get the deploy key'
+
 - script: |
     set -e
+
     chmod +x ./build/bumpAndPublish.sh
     ./build/bumpAndPublish.sh "$(marketplace_key)"
+    result=$?
+
+    if [ $result -eq 0 ]; then
+      git config --local user.name "Azure Pipelines"
+      git config --local user.email "azuredevops@microsoft.com"
+      git add .
+      git commit -m "Publishing version bump ***NO_CI***"
+
+      mkdir ~/.ssh && mv $DOWNLOADSECUREFILE_SECUREFILEPATH ~/.ssh/id_rsa
+      chmod 700 ~/.ssh && chmod 600 ~/.ssh/id_rsa
+      ssh-keyscan -t rsa github.com >> ~/.ssh/known_hosts
+      git remote set-url --push origin git@github.com:microsoft/vscode-typescript-next.git
+      git push origin HEAD:master
+
+      exit
+    elif [ $result -eq 1 ]; then
+        exit
+    else
+        exit $result
+    fi
   displayName: 'Publish to marketplace'
