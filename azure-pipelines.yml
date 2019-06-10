@@ -7,11 +7,8 @@ trigger:
 pool:
   vmImage: 'ubuntu-latest'
 
-jobs:
-  - job: publish
-
-    steps:
-    - script: |
-        set -e
-        npm run bump-version && npx vsce publish $f --pat "$(marketplace_key)" --noVerify
-      displayName: 'Publish to marketplace'
+steps:
+- script: |
+    set -e
+    npm run bump-version && npx vsce publish $f --pat "$(marketplace_key)" --noVerify
+  displayName: 'Publish to marketplace'
