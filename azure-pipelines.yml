@@ -14,7 +14,7 @@ steps:
     set -e
 
     chmod +x ./build/bumpAndPublish.sh
-    ./build/bumpAndPublish.sh "$(marketplace_key)"
+    output="$(./build/bumpAndPublish.sh '$(marketplace_key)' 2>&1)"
     result=$?
 
     if [ $result -eq 0 ]; then
@@ -31,8 +31,10 @@ steps:
 
       exit
     elif [ $result -eq 1 ]; then
+        echo "Skipping publish"
         exit
     else
+        echo "Unexpected error"
         exit $result
     fi
   displayName: 'Publish to marketplace'
