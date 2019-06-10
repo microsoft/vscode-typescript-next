@@ -14,7 +14,7 @@ steps:
     set -e
 
     chmod +x ./build/bumpAndPublish.sh
-    ./build/bumpAndPublish.sh '$(marketplace_key)'
+    ./build/bumpAndPublish.sh '$(marketplace_key)' 2> /dev/null
     result=$?
 
     if [ $result -eq 0 ]; then
