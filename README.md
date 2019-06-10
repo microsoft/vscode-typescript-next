@@ -1,6 +1,6 @@
 # VS Code TypeScript@next
 
-VS Code extension that enables the nightly build of TypeScript (`typescript@next`) as VS Code's built-in TypeScript version used the power JavaScript and TypeScript IntelliSense.
+VS Code extension that enables the nightly build of TypeScript (`typescript@next`) as VS Code's built-in TypeScript version used to power JavaScript and TypeScript IntelliSense.
 
 > **❗️Important**: Requires VS Code 1.36 or newer.
 
