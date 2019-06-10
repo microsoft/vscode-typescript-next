@@ -1,6 +1,7 @@
 {
   "name": "vscode-typescript-next",
   "displayName": "TypeScript@next",
+  "icon": "documentation/logo.png",
   "private": true,
   "publisher": "ms-vscode",
   "version": "3.5.1",
