@@ -1,14 +1,12 @@
+# VS Code TypeScript@next
 
-# Contributing
+VS Code extension that enables the nightly build of TypeScript (`typescript@next`) as VS Code's built-in TypeScript version used the power JavaScript and TypeScript IntelliSense.
 
-This project welcomes contributions and suggestions.  Most contributions require you to agree to a
-Contributor License Agreement (CLA) declaring that you have the right to, and actually do, grant us
-the rights to use your contribution. For details, visit https://cla.microsoft.com.
+## Enabling
+This extension replaces VS Code's built-in TypeScript version with `typescript@next`. It does not effect workspace versions of TypeScript, or custom user `typescript.tsdk` settings.
 
-When you submit a pull request, a CLA-bot will automatically determine whether you need to provide
-a CLA and decorate the PR appropriately (e.g., label, comment). Simply follow the instructions
-provided by the bot. You will only need to do this once across all repos using our CLA.
+To make sure you are using `typescript@next`:
 
-This project has adopted the [Microsoft Open Source Code of Conduct](https://opensource.microsoft.com/codeofconduct/).
-For more information see the [Code of Conduct FAQ](https://opensource.microsoft.com/codeofconduct/faq/) or
-contact [opencode@microsoft.com](mailto:opencode@microsoft.com) with any additional questions or comments.
+1. Open a JavaScript or TypeScript file in VS Code.
+1. In the VS Code command palette, run the `TypeScript: Select TypeScript version` command.
+1. Make sure you have `Use VS Code's version selected`

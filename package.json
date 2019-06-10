@@ -1,13 +1,17 @@
 {
   "name": "vscode-typescript-next",
+  "displayName": "TypeScript@next",
   "private": true,
   "version": "3.6.0-dev.20190608",
-  "description": "",
+  "description": "Enables typescript@next as VS Code's built-in TypeScript version",
   "scripts": {
     "bump-version": "npm install typescript@next && node ./build/updatePackageVersion.js"
   },
-  "keywords": [],
-  "author": "",
+  "keywords": [
+    "JavaScript",
+    "TypeScript"
+  ],
+  "author": "Microsoft",
   "license": "MIT",
   "dependencies": {
     "typescript": "^3.6.0-dev.20190608"
