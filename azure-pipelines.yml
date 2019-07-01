@@ -7,6 +7,8 @@ schedules:
     - master
   always: true
 
+pr: none
+
 pool:
   vmImage: 'ubuntu-latest'
 
