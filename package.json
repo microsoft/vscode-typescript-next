@@ -9,7 +9,7 @@
   "engines": {
     "vscode": "^1.36.0"
   },
-  "extensionKind": "workspace",
+  "extensionKind": ["workspace"],
   "scripts": {
     "bump-version": "npm install typescript@next && node ./build/updatePackageVersion.js"
   },
