@@ -108,7 +108,7 @@ exports.update = function (branchId, repoPath, dest, modifyGrammar) {
     }, console.error);
 }
 
-var branch = process.argv[2] || "master";
+var branch = process.argv[2] || "main";
 exports.update(branch, 'TypeScript.tmLanguage', './syntaxes/TypeScript.tmLanguage.json');
 exports.update(branch, 'TypeScriptReact.tmLanguage', './syntaxes/TypeScriptReact.tmLanguage.json');
 exports.update(branch, 'TypeScriptReact.tmLanguage', './syntaxes/JavaScript.tmLanguage.json', adaptToJavaScript);

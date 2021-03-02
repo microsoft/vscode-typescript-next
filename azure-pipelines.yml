@@ -4,7 +4,7 @@ schedules:
   displayName: Daily midnight build
   branches:
     include:
-    - master
+    - main
   always: true
 
 pr: none
@@ -42,7 +42,7 @@ steps:
       chmod 700 ~/.ssh && chmod 600 ~/.ssh/id_rsa
       ssh-keyscan -t rsa github.com >> ~/.ssh/known_hosts
       git remote set-url --push origin git@github.com:microsoft/vscode-typescript-next.git
-      git push origin HEAD:master
+      git push origin HEAD:main
 
       exit
     elif [ $result -eq 1 ]; then
