@@ -5,7 +5,7 @@
   "icon": "documentation/logo.png",
   "private": true,
   "publisher": "ms-vscode",
-  "version": "4.3.20210223",
+  "version": "4.3.20210228",
   "engines": {
     "vscode": "^1.36.0"
   },
@@ -13,7 +13,8 @@
     "workspace"
   ],
   "scripts": {
-    "bump-version": "npm install typescript@next && node ./build/updatePackageVersion.js"
+    "bump-version": "npm install typescript@next && node ./build/updatePackageVersion.js",
+    "update-grammar": "node ./build/updateGrammar.js"
   },
   "repository": {
     "type": "git",
@@ -32,9 +33,76 @@
   "author": "Microsoft",
   "license": "MIT",
   "dependencies": {
-    "typescript": "^4.3.0-dev.20210223"
+    "typescript": "^4.3.0-dev.20210228"
   },
   "devDependencies": {
-    "@types/node": "^12.0.7"
+    "@types/node": "^12.0.7",
+    "fast-plist": "0.1.1"
+  },
+  "contributes": {
+    "grammars": [
+      {
+        "language": "javascriptreact",
+        "scopeName": "source.js.jsx",
+        "path": "./syntaxes/JavaScriptReact.tmLanguage.json",
+        "embeddedLanguages": {
+          "meta.tag.js": "jsx-tags",
+          "meta.tag.without-attributes.js": "jsx-tags",
+          "meta.tag.attributes.js.jsx": "javascriptreact",
+          "meta.embedded.expression.js": "javascriptreact"
+        },
+        "tokenTypes": {
+          "entity.name.type.instance.jsdoc": "other",
+          "entity.name.function.tagged-template": "other",
+          "meta.import string.quoted": "other",
+          "variable.other.jsdoc": "other"
+        }
+      },
+      {
+        "language": "javascript",
+        "scopeName": "source.js",
+        "path": "./syntaxes/JavaScript.tmLanguage.json",
+        "embeddedLanguages": {
+          "meta.tag.js": "jsx-tags",
+          "meta.tag.without-attributes.js": "jsx-tags",
+          "meta.tag.attributes.js": "javascript",
+          "meta.embedded.expression.js": "javascript"
+        },
+        "tokenTypes": {
+          "entity.name.type.instance.jsdoc": "other",
+          "entity.name.function.tagged-template": "other",
+          "meta.import string.quoted": "other",
+          "variable.other.jsdoc": "other"
+        }
+      },
+      {
+        "language": "typescript",
+        "scopeName": "source.ts",
+        "path": "./syntaxes/TypeScript.tmLanguage.json",
+        "tokenTypes": {
+          "entity.name.type.instance.jsdoc": "other",
+          "entity.name.function.tagged-template": "other",
+          "meta.import string.quoted": "other",
+          "variable.other.jsdoc": "other"
+        }
+      },
+      {
+        "language": "typescriptreact",
+        "scopeName": "source.tsx",
+        "path": "./syntaxes/TypeScriptReact.tmLanguage.json",
+        "embeddedLanguages": {
+          "meta.tag.tsx": "jsx-tags",
+          "meta.tag.without-attributes.tsx": "jsx-tags",
+          "meta.tag.attributes.tsx": "typescriptreact",
+          "meta.embedded.expression.tsx": "typescriptreact"
+        },
+        "tokenTypes": {
+          "entity.name.type.instance.jsdoc": "other",
+          "entity.name.function.tagged-template": "other",
+          "meta.import string.quoted": "other",
+          "variable.other.jsdoc": "other"
+        }
+      }
+    ]
   }
 }
