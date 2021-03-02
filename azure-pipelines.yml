@@ -19,6 +19,14 @@ steps:
   displayName: 'Get the deploy key'
 
 - bash: |
+    chmod +x ./build/updateGrammar.sh
+    ./build/updateGrammar.sh 
+    grammarResult=$?
+    if [ $grammarResult -neq 0 ] ; then
+        echo "Unexpected error while updating grammar"
+        exit $grammarResult
+    fi
+
     chmod +x ./build/bumpAndPublish.sh
     ./build/bumpAndPublish.sh '$(marketplace_key)'
     result=$?

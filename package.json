@@ -9,9 +9,12 @@
   "engines": {
     "vscode": "^1.36.0"
   },
-  "extensionKind": ["workspace"],
+  "extensionKind": [
+    "workspace"
+  ],
   "scripts": {
-    "bump-version": "npm install typescript@next && node ./build/updatePackageVersion.js"
+    "bump-version": "npm install typescript@next && node ./build/updatePackageVersion.js",
+    "update-grammar": "node ./build/updateGrammar.js"
   },
   "repository": {
     "type": "git",
@@ -33,6 +36,38 @@
     "typescript": "^4.0.0-dev.20200712"
   },
   "devDependencies": {
-    "@types/node": "^12.0.7"
+    "@types/node": "^12.0.7",
+    "fast-plist": "0.1.1"
+  },
+  "contributes": {
+    "grammars": [
+      {
+        "language": "javascript",
+        "scopeName": "source.js",
+        "path": "./syntaxes/JavaScript.tmLanguage.json",
+        "embeddedLanguages": {
+          "meta.tag.js": "jsx-tags",
+          "meta.tag.without-attributes.js": "jsx-tags",
+          "meta.tag.attributes.js": "javascriptreact",
+          "meta.embedded.expression.js": "javascriptreact"
+        }
+      },
+      {
+        "language": "typescript",
+        "scopeName": "source.ts",
+        "path": "./syntaxes/TypeScript.tmLanguage.json"
+      },
+      {
+        "language": "typescriptreact",
+        "scopeName": "source.tsx",
+        "path": "./syntaxes/TypeScriptReact.tmLanguage.json",
+        "embeddedLanguages": {
+          "meta.tag.tsx": "jsx-tags",
+          "meta.tag.without-attributes.tsx": "jsx-tags",
+          "meta.tag.attributes.tsx": "typescriptreact",
+          "meta.embedded.expression.tsx": "typescriptreact"
+        }
+      }
+    ]
   }
 }
