@@ -5,7 +5,7 @@
   "icon": "documentation/logo.png",
   "private": true,
   "publisher": "ms-vscode",
-  "version": "4.3.20210331",
+  "version": "4.3.20210401",
   "engines": {
     "vscode": "^1.36.0"
   },
@@ -33,7 +33,7 @@
   "author": "Microsoft",
   "license": "MIT",
   "dependencies": {
-    "typescript": "^4.3.0-dev.20210331"
+    "typescript": "^4.3.0-dev.20210401"
   },
   "devDependencies": {
     "@types/node": "^12.0.7",
