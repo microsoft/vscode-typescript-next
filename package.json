@@ -12,6 +12,9 @@
   "extensionKind": [
     "workspace"
   ],
+  "workspaceTrust": {
+    "request": "never"
+  },
   "scripts": {
     "bump-version": "npm install typescript@next && node ./build/updatePackageVersion.js",
     "update-grammar": "node ./build/updateGrammar.js"
