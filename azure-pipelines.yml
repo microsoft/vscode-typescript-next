@@ -10,9 +10,6 @@ schedules:
     - main
   always: true
 
-pool:
-  vmImage: 'ubuntu-latest'
-
 resources:
   repositories:
     - repository: templates
@@ -26,8 +23,7 @@ extends:
   parameters:
     usePreReleaseChannel: false
     buildSteps:
-      - displayName: 'Update TypeScript and grammar'
-        bash: |
+      - bash: |
           chmod +x ./build/updateGrammar.sh
           ./build/updateGrammar.sh
           grammarResult=$?
@@ -60,3 +56,5 @@ extends:
               echo "Unexpected error"
               exit $result
           fi
+        displayName: 'Update TypeScript and grammar'
+        
