@@ -17,7 +17,7 @@ resources:
   repositories:
     - repository: templates
       type: github
-      name: microsoft/vscode-typescript-next
+      name: microsoft/vscode-engineering
       ref: main
       endpoint: Monaco
 
