@@ -23,6 +23,9 @@ extends:
   parameters:
     usePreReleaseChannel: false
     buildSteps:
+      - checkout: self
+        clean: true
+        persistCredentials: true
       - bash: |
           npm install
 
