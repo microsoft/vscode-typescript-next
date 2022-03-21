@@ -26,7 +26,8 @@ extends:
   parameters:
     usePreReleaseChannel: false
     buildSteps:
-      - bash: |
+      - displayName: 'Update TypeScript and grammar'
+        bash: |
           chmod +x ./build/updateGrammar.sh
           ./build/updateGrammar.sh
           grammarResult=$?
@@ -37,7 +38,7 @@ extends:
 
           npm run bump-version
           result=$?
-
+          
           set -e
           if [ $result -eq 0 ]; then
             git config --local user.name "Azure Pipelines"
@@ -59,4 +60,3 @@ extends:
               echo "Unexpected error"
               exit $result
           fi
-      displayName: 'Publish to marketplace'
