@@ -24,6 +24,8 @@ extends:
     usePreReleaseChannel: false
     buildSteps:
       - bash: |
+          npm install
+
           chmod +x ./build/updateGrammar.sh
           ./build/updateGrammar.sh
           grammarResult=$?
