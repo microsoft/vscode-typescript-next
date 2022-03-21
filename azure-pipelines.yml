@@ -51,7 +51,7 @@ extends:
             exit
           elif [ $result -eq 1 ]; then
               echo "Skipping publish"
-              exit
+              exit 1
           else
               echo "Unexpected error"
               exit $result
