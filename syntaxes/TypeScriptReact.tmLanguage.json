@@ -2300,24 +2300,27 @@
 					"include": "#comment"
 				},
 				{
-					"match": "(?<![_$[:alnum:]])(?:(?<=\\.\\.\\.)|(?<!\\.))(?:(\\bdefault)|(\\*)|(\\b[_$[:alpha:]][_$[:alnum:]]*))\\s+(as)\\s+(?:(default(?![_$[:alnum:]])(?:(?=\\.\\.\\.)|(?!\\.)))|([_$[:alpha:]][_$[:alnum:]]*))",
+					"match": "(?<![_$[:alnum:]])(?:(?<=\\.\\.\\.)|(?<!\\.))(?:(?:(\\btype)\\s+)?(?:(\\bdefault)|(\\*)|(\\b[_$[:alpha:]][_$[:alnum:]]*)))\\s+(as)\\s+(?:(default(?![_$[:alnum:]])(?:(?=\\.\\.\\.)|(?!\\.)))|([_$[:alpha:]][_$[:alnum:]]*))",
 					"captures": {
 						"1": {
-							"name": "keyword.control.default.tsx"
+							"name": "keyword.control.type.tsx"
 						},
 						"2": {
-							"name": "constant.language.import-export-all.tsx"
-						},
-						"3": {
-							"name": "variable.other.readwrite.tsx"
-						},
-						"4": {
-							"name": "keyword.control.as.tsx"
-						},
-						"5": {
 							"name": "keyword.control.default.tsx"
 						},
+						"3": {
+							"name": "constant.language.import-export-all.tsx"
+						},
+						"4": {
+							"name": "variable.other.readwrite.tsx"
+						},
+						"5": {
+							"name": "keyword.control.as.tsx"
+						},
 						"6": {
+							"name": "keyword.control.default.tsx"
+						},
+						"7": {
 							"name": "variable.other.readwrite.alias.tsx"
 						}
 					}
@@ -2334,8 +2337,15 @@
 					"match": "\\b(default)\\b"
 				},
 				{
-					"name": "variable.other.readwrite.alias.tsx",
-					"match": "([_$[:alpha:]][_$[:alnum:]]*)"
+					"match": "(?:(\\btype)\\s+)?([_$[:alpha:]][_$[:alnum:]]*)",
+					"captures": {
+						"1": {
+							"name": "keyword.control.type.tsx"
+						},
+						"2": {
+							"name": "variable.other.readwrite.alias.tsx"
+						}
+					}
 				}
 			]
 		},
@@ -5282,6 +5292,27 @@
 					}
 				},
 				{
+					"begin": "(?x)((@)template)\\s+(?={)",
+					"beginCaptures": {
+						"1": {
+							"name": "storage.type.class.jsdoc"
+						},
+						"2": {
+							"name": "punctuation.definition.block.tag.jsdoc"
+						}
+					},
+					"end": "(?=\\s|\\*/|[^{}\\[\\]A-Za-z_$])",
+					"patterns": [
+						{
+							"include": "#jsdoctype"
+						},
+						{
+							"name": "variable.other.jsdoc",
+							"match": "([A-Za-z_$][\\w$.\\[\\]]*)"
+						}
+					]
+				},
+				{
 					"match": "(?x)\n(\n  (@)\n  (?:arg|argument|const|constant|member|namespace|param|var)\n)\n\\s+\n(\n  [A-Za-z_$]\n  [\\w$.\\[\\]]*\n)",
 					"captures": {
 						"1": {
@@ -5871,5 +5902,5 @@
 			"match": "\\S+"
 		}
 	},
-	"version": "https://github.com/Microsoft/TypeScript-TmLanguage/commit/6012ccea5c7fef05805fb38d1fa27acd8e667e33"
+	"version": "https://github.com/Microsoft/TypeScript-TmLanguage/commit/08fbf951fe3bd34d45c1bf79747d549f634bf254"
 }
