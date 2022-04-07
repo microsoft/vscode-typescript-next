@@ -4089,10 +4089,10 @@
 					"include": "#type-object"
 				},
 				{
-					"include": "#type-conditional"
+					"include": "#type-operators"
 				},
 				{
-					"include": "#type-operators"
+					"include": "#type-conditional"
 				},
 				{
 					"include": "#type-fn-type-parameters"
@@ -4441,6 +4441,9 @@
 					"include": "#typeof-operator"
 				},
 				{
+					"include": "#type-infer"
+				},
+				{
 					"begin": "([&|])(?=\\s*\\{)",
 					"beginCaptures": {
 						"0": {
@@ -4472,12 +4475,27 @@
 					"match": "(\\?|\\:)"
 				},
 				{
-					"name": "keyword.operator.expression.infer.ts",
-					"match": "(?<![_$[:alnum:]])(?:(?<=\\.\\.\\.)|(?<!\\.))infer(?=\\s+[_$[:alpha:]])"
-				},
-				{
 					"name": "keyword.operator.expression.import.ts",
 					"match": "(?<![_$[:alnum:]])(?:(?<=\\.\\.\\.)|(?<!\\.))import(?=\\s*\\()"
+				}
+			]
+		},
+		"type-infer": {
+			"patterns": [
+				{
+					"match": "(?<![_$[:alnum:]])(?:(?<=\\.\\.\\.)|(?<!\\.))(infer)\\s+([_$[:alpha:]][_$[:alnum:]]*)(?![_$[:alnum:]])(?:(?=\\.\\.\\.)|(?!\\.))(?:\\s+(extends)(?![_$[:alnum:]])(?:(?=\\.\\.\\.)|(?!\\.)))?",
+					"name": "meta.type.infer.ts",
+					"captures": {
+						"1": {
+							"name": "keyword.operator.expression.infer.ts"
+						},
+						"2": {
+							"name": "entity.name.type.ts"
+						},
+						"3": {
+							"name": "keyword.operator.expression.extends.ts"
+						}
+					}
 				}
 			]
 		},
@@ -5649,5 +5667,5 @@
 			]
 		}
 	},
-	"version": "https://github.com/Microsoft/TypeScript-TmLanguage/commit/08fbf951fe3bd34d45c1bf79747d549f634bf254"
+	"version": "https://github.com/Microsoft/TypeScript-TmLanguage/commit/b38c52f4be29df573f9ea16a1f4c6394b182db63"
 }
