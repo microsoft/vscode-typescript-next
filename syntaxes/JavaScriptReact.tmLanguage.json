@@ -2274,7 +2274,43 @@
 					"match": "\\bfrom\\b"
 				},
 				{
+					"include": "#import-export-assert-clause"
+				},
+				{
 					"include": "#import-export-clause"
+				}
+			]
+		},
+		"import-export-assert-clause": {
+			"begin": "(?<![_$[:alnum:]])(?:(?<=\\.\\.\\.)|(?<!\\.))(assert)\\s*(\\{)",
+			"beginCaptures": {
+				"1": {
+					"name": "keyword.control.assert.js.jsx"
+				},
+				"2": {
+					"name": "punctuation.definition.block.js.jsx"
+				}
+			},
+			"end": "\\}",
+			"endCaptures": {
+				"0": {
+					"name": "punctuation.definition.block.js.jsx"
+				}
+			},
+			"patterns": [
+				{
+					"include": "#comment"
+				},
+				{
+					"include": "#string"
+				},
+				{
+					"name": "meta.object-literal.key.js.jsx",
+					"match": "(?:[_$[:alpha:]][_$[:alnum:]]*)\\s*(?=(\\/\\*([^\\*]|(\\*[^\\/]))*\\*\\/\\s*)*:)"
+				},
+				{
+					"name": "punctuation.separator.key-value.js.jsx",
+					"match": ":"
 				}
 			]
 		},
@@ -5924,5 +5960,5 @@
 			"match": "\\S+"
 		}
 	},
-	"version": "https://github.com/Microsoft/TypeScript-TmLanguage/commit/b38c52f4be29df573f9ea16a1f4c6394b182db63"
+	"version": "https://github.com/Microsoft/TypeScript-TmLanguage/commit/2e99115da2ada5ef36a89aa4828f955c4a7a2b05"
 }
