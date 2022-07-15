@@ -48,6 +48,12 @@
         "language": "javascriptreact",
         "scopeName": "source.js.jsx",
         "path": "./syntaxes/JavaScriptReact.tmLanguage.json",
+        "unbalancedBracketScopes": [
+          "keyword.operator.relational",
+          "storage.type.function.arrow",
+          "keyword.operator.bitwise.shift",
+          "punctuation.definition.tag"
+        ],
         "embeddedLanguages": {
           "meta.tag.js": "jsx-tags",
           "meta.tag.without-attributes.js": "jsx-tags",
@@ -93,6 +99,12 @@
         "language": "typescriptreact",
         "scopeName": "source.tsx",
         "path": "./syntaxes/TypeScriptReact.tmLanguage.json",
+        "unbalancedBracketScopes": [
+          "keyword.operator.relational",
+          "storage.type.function.arrow",
+          "keyword.operator.bitwise.shift",
+          "punctuation.definition.tag"
+        ],
         "embeddedLanguages": {
           "meta.tag.tsx": "jsx-tags",
           "meta.tag.without-attributes.tsx": "jsx-tags",
