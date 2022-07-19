@@ -88,6 +88,12 @@
         "language": "typescript",
         "scopeName": "source.ts",
         "path": "./syntaxes/TypeScript.tmLanguage.json",
+        "unbalancedBracketScopes": [
+          "keyword.operator.relational",
+          "storage.type.function.arrow",
+          "keyword.operator.bitwise.shift",
+          "punctuation.definition.tag"
+        ],
         "tokenTypes": {
           "entity.name.type.instance.jsdoc": "other",
           "entity.name.function.tagged-template": "other",
