@@ -22,6 +22,7 @@ extends:
   template: azure-pipelines/extension/pre-release.yml@templates
   parameters:
     usePreReleaseChannel: false
+    l10nShouldProcess: false
     buildSteps:
       - checkout: self
         clean: true
@@ -57,4 +58,3 @@ extends:
               exit $result
           fi
         displayName: 'Update TypeScript and grammar'
-        
