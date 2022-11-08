@@ -33,7 +33,7 @@ extends:
           chmod +x ./build/updateGrammar.sh
           ./build/updateGrammar.sh
           grammarResult=$?
-          if [ $grammarResult -neq 0 ] ; then
+          if [ $grammarResult -ne 0 ] ; then
               echo "Unexpected error while updating grammar"
               exit $grammarResult
           fi
