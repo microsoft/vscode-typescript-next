@@ -1864,7 +1864,7 @@
 		},
 		"property-accessor": {
 			"name": "storage.type.property.js.jsx",
-			"match": "(?<![_$[:alnum:]])(?:(?<=\\.\\.\\.)|(?<!\\.))(get|set)(?![_$[:alnum:]])(?:(?=\\.\\.\\.)|(?!\\.))"
+			"match": "(?<![_$[:alnum:]])(?:(?<=\\.\\.\\.)|(?<!\\.))(accessor|get|set)(?![_$[:alnum:]])(?:(?=\\.\\.\\.)|(?!\\.))"
 		},
 		"async-modifier": {
 			"name": "storage.modifier.async.js.jsx",
@@ -5962,5 +5962,5 @@
 			"match": "\\S+"
 		}
 	},
-	"version": "https://github.com/Microsoft/TypeScript-TmLanguage/commit/0e0912419bfb3aad8638e79f6437b5628818cd55"
+	"version": "https://github.com/Microsoft/TypeScript-TmLanguage/commit/359e091c0a83a45e20aefc13111ed4a19e201f97"
 }
