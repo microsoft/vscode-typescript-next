@@ -22,7 +22,7 @@ parameters:
   - name: VERSION_SUFFIX
     displayName: Suffix appended to package version.
     type: string
-    default: ""
+    default: " "
 
 extends:
   template: azure-pipelines/extension/pre-release.yml@templates
