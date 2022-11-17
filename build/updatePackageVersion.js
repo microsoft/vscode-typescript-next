@@ -6,7 +6,8 @@ const json = JSON.parse(fs.readFileSync(path.join(__dirname, '..', 'package.json
 const jsonLock = JSON.parse(fs.readFileSync(path.join(__dirname, '..', 'package-lock.json')).toString());
 
 // Set version to TS Version
-const version = jsonLock['dependencies']['typescript']['version'].replace(/0?\-\w*\./g, '');
+const versionSuffix = process.argv[2] || '';
+const version = jsonLock['dependencies']['typescript']['version'].replace(/0?\-\w*\./g, '') + versionSuffix;
 if (version === json['version']) {
     console.log(`Already at latest version ${version}`);
     process.exit(1);

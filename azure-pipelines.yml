@@ -18,6 +18,12 @@ resources:
       ref: main
       endpoint: Monaco
 
+parameters:
+  - name: VERSION_SUFFIX
+    displayName: Suffix appended to package version.
+    type: string
+    default: ""
+
 extends:
   template: azure-pipelines/extension/pre-release.yml@templates
   parameters:
@@ -38,7 +44,7 @@ extends:
               exit $grammarResult
           fi
 
-          npm run bump-version
+          npm run bump-version ${{ parameters.VERSION_SUFFIX }}
           result=$?
           
           set -e
