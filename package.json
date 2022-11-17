@@ -5,7 +5,7 @@
   "icon": "documentation/logo.png",
   "private": true,
   "publisher": "ms-vscode",
-  "version": "5.0.20221117.1",
+  "version": "5.0.20221117.2",
   "engines": {
     "vscode": "^1.36.0"
   },
