@@ -3319,7 +3319,7 @@
 							"name": "keyword.control.satisfies.js.jsx"
 						}
 					},
-					"end": "(?=^|[;),}\\]:?\\-\\+\\>]|\\|\\||\\&\\&|\\!\\=\\=|$|((?<![_$[:alnum:]])(?:(?<=\\.\\.\\.)|(?<!\\.))(as|satisifies)\\s+)|(\\s+\\<))",
+					"end": "(?=^|[;),}\\]:?\\-\\+\\>]|\\|\\||\\&\\&|\\!\\=\\=|$|((?<![_$[:alnum:]])(?:(?<=\\.\\.\\.)|(?<!\\.))(as|satisfies)\\s+)|(\\s+\\<))",
 					"patterns": [
 						{
 							"include": "#type"
@@ -5962,5 +5962,5 @@
 			"match": "\\S+"
 		}
 	},
-	"version": "https://github.com/Microsoft/TypeScript-TmLanguage/commit/8e4e371fe8dd57560b16a44474f8cf8ca981e715"
+	"version": "https://github.com/Microsoft/TypeScript-TmLanguage/commit/6d1388bafce0ca741a0c28d4efde40739f8a6c06"
 }
