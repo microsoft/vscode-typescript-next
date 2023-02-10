@@ -987,6 +987,9 @@
 						},
 						{
 							"include": "#parameter-binding-element"
+						},
+						{
+							"include": "#paren-expression"
 						}
 					]
 				},
@@ -1169,7 +1172,7 @@
 							"name": "keyword.operator.assignment.tsx"
 						}
 					},
-					"end": "(?=[,);}\\]]|((?<![_$[:alnum:]])(?:(?<=\\.\\.\\.)|(?<!\\.))(of|in)\\s+))|(?=^\\s*$)|(?<=\\S)(?<!=)(?=\\s*$)",
+					"end": "(?=[,);}\\]]|((?<![_$[:alnum:]])(?:(?<=\\.\\.\\.)|(?<!\\.))(of|in)\\s+))|(?=^\\s*$)|(?<![\\|\\&\\+\\-\\*\\/])(?<=\\S)(?<!=)(?=\\s*$)",
 					"patterns": [
 						{
 							"include": "#expression"
@@ -3421,8 +3424,11 @@
 					"name": "keyword.operator.expression.typeof.tsx"
 				}
 			},
-			"end": "(?=[,);}\\]=>:&|{\\?]|$|;|^\\s*$|(?:^\\s*(?:abstract|async|class|const|declare|enum|export|function|import|interface|let|module|namespace|return|type|var)\\b))",
+			"end": "(?=[,);}\\]=>:&|{\\?]|(extends\\s+)|$|;|^\\s*$|(?:^\\s*(?:abstract|async|class|const|declare|enum|export|function|import|interface|let|module|namespace|return|type|var)\\b))",
 			"patterns": [
+				{
+					"include": "#type-arguments"
+				},
 				{
 					"include": "#expression"
 				}
@@ -3835,7 +3841,7 @@
 							"name": "keyword.operator.type.annotation.tsx"
 						}
 					},
-					"end": "(?<![:|&])((?=$|^|[,);\\}\\]]|//)|(?==[^>])|((?<=[\\}>\\]\\)]|[_$[:alpha:]])\\s*(?=\\{)))",
+					"end": "(?<![:|&])(?!\\s*[|&]\\s+)((?=^|[,);\\}\\]]|//)|(?==[^>])|((?<=[\\}>\\]\\)]|[_$[:alpha:]])\\s*(?=\\{)))",
 					"patterns": [
 						{
 							"include": "#type"
@@ -3850,7 +3856,7 @@
 							"name": "keyword.operator.type.annotation.tsx"
 						}
 					},
-					"end": "(?<![:|&])((?=[,);\\}\\]]|//)|(?==[^>])|(?=^\\s*$)|((?<=\\S)(?=\\s*$))|((?<=[\\}>\\]\\)]|[_$[:alpha:]])\\s*(?=\\{)))",
+					"end": "(?<![:|&])((?=[,);\\}\\]]|\\/\\/)|(?==[^>])|(?=^\\s*$)|((?<=[\\}>\\]\\)]|[_$[:alpha:]])\\s*(?=\\{)))",
 					"patterns": [
 						{
 							"include": "#type"
@@ -5958,5 +5964,5 @@
 			"match": "\\S+"
 		}
 	},
-	"version": "https://github.com/Microsoft/TypeScript-TmLanguage/commit/2f3b5b963c26f984897484a8cdc493ea60e92156"
+	"version": "https://github.com/Microsoft/TypeScript-TmLanguage/commit/5dec0d9583ea5b85d09d545a646370831859d881"
 }
