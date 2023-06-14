@@ -3,12 +3,12 @@ trigger: none
 pr: none
 
 schedules:
-- cron: '0 0 * * *'
-  displayName: Daily midnight build
-  branches:
-    include:
-    - main
-  always: true
+  - cron: '0 0 * * *'
+    displayName: Daily midnight build
+    branches:
+      include:
+        - main
+    always: true
 
 resources:
   repositories:
@@ -19,10 +19,14 @@ resources:
       endpoint: Monaco
 
 parameters:
+  - name: publishExtension
+    displayName: 🚀 Publish Extension
+    type: boolean
+    default: false
   - name: VERSION_SUFFIX
     displayName: Suffix appended to package version.
     type: string
-    default: " "
+    default: ' '
 
 extends:
   template: azure-pipelines/extension/pre-release.yml@templates
@@ -46,7 +50,7 @@ extends:
 
           npm run bump-version ${{ parameters.VERSION_SUFFIX }}
           result=$?
-          
+
           set -e
           if [ $result -eq 0 ]; then
             git config --local user.name "Azure Pipelines"
@@ -64,3 +68,5 @@ extends:
               exit $result
           fi
         displayName: 'Update TypeScript and grammar'
+
+    publishExtension: ${{ parameters.publishExtension }}
