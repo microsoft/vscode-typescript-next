@@ -5783,5 +5783,6 @@
 				}
 			]
 		}
-	}
+	},
+	"version": "https://github.com/Microsoft/TypeScript-TmLanguage/commit/f6da22de2cd27230bce5ca6db87360659b6c1e4b"
 }
