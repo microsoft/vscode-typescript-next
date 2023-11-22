@@ -6036,6 +6036,5 @@
 			"name": "invalid.illegal.attribute.js",
 			"match": "\\S+"
 		}
-	},
-	"version": "https://github.com/Microsoft/TypeScript-TmLanguage/commit/e93035ba2fabc16bf0c75a9ab799f8992580b96d"
+	}
 }
