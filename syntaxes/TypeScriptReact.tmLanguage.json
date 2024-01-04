@@ -2349,12 +2349,15 @@
 			]
 		},
 		"import-export-assert-clause": {
-			"begin": "(?<![_$[:alnum:]])(?:(?<=\\.\\.\\.)|(?<!\\.))(assert)\\s*(\\{)",
+			"begin": "(?<![_$[:alnum:]])(?:(?<=\\.\\.\\.)|(?<!\\.))(?:(with)|(assert))\\s*(\\{)",
 			"beginCaptures": {
 				"1": {
-					"name": "keyword.control.assert.tsx"
+					"name": "keyword.control.with.tsx"
 				},
 				"2": {
+					"name": "keyword.control.assert.tsx"
+				},
+				"3": {
 					"name": "punctuation.definition.block.tsx"
 				}
 			},
@@ -6033,5 +6036,5 @@
 			"match": "\\S+"
 		}
 	},
-	"version": "https://github.com/Microsoft/TypeScript-TmLanguage/commit/e7886bb8450535bb2aed48f42269d1549abb26f3"
+	"version": "https://github.com/Microsoft/TypeScript-TmLanguage/commit/b80b7509a78e642f789c567e144ed951ab98b4e3"
 }
