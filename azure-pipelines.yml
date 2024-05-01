@@ -32,6 +32,7 @@ extends:
   template: azure-pipelines/extension/pre-release.yml@templates
   parameters:
     usePreReleaseChannel: false
+    useContinuousReleaseSignal: false
     l10nShouldProcess: false
     buildSteps:
       - checkout: self
