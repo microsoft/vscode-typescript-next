@@ -2410,7 +2410,7 @@
 					"include": "#comment"
 				},
 				{
-					"match": "(?<![_$[:alnum:]])(?:(?<=\\.\\.\\.)|(?<!\\.))(?:(?:(\\btype)\\s+)?(?:(\\bdefault)|(\\*)|(\\b[_$[:alpha:]][_$[:alnum:]]*)))\\s+(as)\\s+(?:(default(?![_$[:alnum:]])(?:(?=\\.\\.\\.)|(?!\\.)))|([_$[:alpha:]][_$[:alnum:]]*))",
+					"match": "(?<![_$[:alnum:]])(?:(?<=\\.\\.\\.)|(?<!\\.))(?:(?:(\\btype)\\s+)?(?:(\\bdefault)|(\\*)|(\\b[_$[:alpha:]][_$[:alnum:]]*)|((\\'([^\\'\\\\]|\\\\.)*\\')|(\\\"([^\\\"\\\\]|\\\\.)*\\\")|(\\`([^\\`\\\\]|\\\\.)*\\`))))\\s+(as)\\s+(?:(default(?![_$[:alnum:]])(?:(?=\\.\\.\\.)|(?!\\.)))|([_$[:alpha:]][_$[:alnum:]]*)|((\\'([^\\'\\\\]|\\\\.)*\\')|(\\\"([^\\\"\\\\]|\\\\.)*\\\")|(\\`([^\\`\\\\]|\\\\.)*\\`)))",
 					"captures": {
 						"1": {
 							"name": "keyword.control.type.tsx"
@@ -2425,13 +2425,19 @@
 							"name": "variable.other.readwrite.tsx"
 						},
 						"5": {
+							"name": "string.quoted.alias.tsx"
+						},
+						"12": {
 							"name": "keyword.control.as.tsx"
 						},
-						"6": {
+						"13": {
 							"name": "keyword.control.default.tsx"
 						},
-						"7": {
+						"14": {
 							"name": "variable.other.readwrite.alias.tsx"
+						},
+						"15": {
+							"name": "string.quoted.alias.tsx"
 						}
 					}
 				},
@@ -2447,13 +2453,16 @@
 					"match": "\\b(default)\\b"
 				},
 				{
-					"match": "(?:(\\btype)\\s+)?([_$[:alpha:]][_$[:alnum:]]*)",
+					"match": "(?:(\\btype)\\s+)?(?:([_$[:alpha:]][_$[:alnum:]]*)|((\\'([^\\'\\\\]|\\\\.)*\\')|(\\\"([^\\\"\\\\]|\\\\.)*\\\")|(\\`([^\\`\\\\]|\\\\.)*\\`)))",
 					"captures": {
 						"1": {
 							"name": "keyword.control.type.tsx"
 						},
 						"2": {
 							"name": "variable.other.readwrite.alias.tsx"
+						},
+						"3": {
+							"name": "string.quoted.alias.tsx"
 						}
 					}
 				}
@@ -2634,13 +2643,13 @@
 						},
 						{
 							"name": "string.regexp.tsx",
-							"begin": "(?<=\\))\\s*\\/(?![\\/*])(?=(?:[^\\/\\\\\\[]|\\\\.|\\[([^\\]\\\\]|\\\\.)*\\])+\\/([dgimsuy]+|(?![\\/\\*])|(?=\\/\\*))(?!\\s*[a-zA-Z0-9_$]))",
+							"begin": "(?<=\\))\\s*\\/(?![\\/*])(?=(?:[^\\/\\\\\\[]|\\\\.|\\[([^\\]\\\\]|\\\\.)*\\])+\\/([dgimsuvy]+|(?![\\/\\*])|(?=\\/\\*))(?!\\s*[a-zA-Z0-9_$]))",
 							"beginCaptures": {
 								"0": {
 									"name": "punctuation.definition.string.begin.tsx"
 								}
 							},
-							"end": "(/)([dgimsuy]*)",
+							"end": "(/)([dgimsuvy]*)",
 							"endCaptures": {
 								"1": {
 									"name": "punctuation.definition.string.end.tsx"
@@ -4936,13 +4945,13 @@
 			"patterns": [
 				{
 					"name": "string.regexp.tsx",
-					"begin": "(?<!\\+\\+|--|})(?<=[=(:,\\[?+!]|^return|[^\\._$[:alnum:]]return|^case|[^\\._$[:alnum:]]case|=>|&&|\\|\\||\\*\\/)\\s*(\\/)(?![\\/*])(?=(?:[^\\/\\\\\\[\\()]|\\\\.|\\[([^\\]\\\\]|\\\\.)+\\]|\\(([^\\)\\\\]|\\\\.)+\\))+\\/([dgimsuy]+|(?![\\/\\*])|(?=\\/\\*))(?!\\s*[a-zA-Z0-9_$]))",
+					"begin": "(?<!\\+\\+|--|})(?<=[=(:,\\[?+!]|^return|[^\\._$[:alnum:]]return|^case|[^\\._$[:alnum:]]case|=>|&&|\\|\\||\\*\\/)\\s*(\\/)(?![\\/*])(?=(?:[^\\/\\\\\\[\\()]|\\\\.|\\[([^\\]\\\\]|\\\\.)+\\]|\\(([^\\)\\\\]|\\\\.)+\\))+\\/([dgimsuvy]+|(?![\\/\\*])|(?=\\/\\*))(?!\\s*[a-zA-Z0-9_$]))",
 					"beginCaptures": {
 						"1": {
 							"name": "punctuation.definition.string.begin.tsx"
 						}
 					},
-					"end": "(/)([dgimsuy]*)",
+					"end": "(/)([dgimsuvy]*)",
 					"endCaptures": {
 						"1": {
 							"name": "punctuation.definition.string.end.tsx"
@@ -4959,13 +4968,13 @@
 				},
 				{
 					"name": "string.regexp.tsx",
-					"begin": "((?<![_$[:alnum:])\\]]|\\+\\+|--|}|\\*\\/)|((?<=^return|[^\\._$[:alnum:]]return|^case|[^\\._$[:alnum:]]case))\\s*)\\/(?![\\/*])(?=(?:[^\\/\\\\\\[]|\\\\.|\\[([^\\]\\\\]|\\\\.)*\\])+\\/([dgimsuy]+|(?![\\/\\*])|(?=\\/\\*))(?!\\s*[a-zA-Z0-9_$]))",
+					"begin": "((?<![_$[:alnum:])\\]]|\\+\\+|--|}|\\*\\/)|((?<=^return|[^\\._$[:alnum:]]return|^case|[^\\._$[:alnum:]]case))\\s*)\\/(?![\\/*])(?=(?:[^\\/\\\\\\[]|\\\\.|\\[([^\\]\\\\]|\\\\.)*\\])+\\/([dgimsuvy]+|(?![\\/\\*])|(?=\\/\\*))(?!\\s*[a-zA-Z0-9_$]))",
 					"beginCaptures": {
 						"0": {
 							"name": "punctuation.definition.string.begin.tsx"
 						}
 					},
-					"end": "(/)([dgimsuy]*)",
+					"end": "(/)([dgimsuvy]*)",
 					"endCaptures": {
 						"1": {
 							"name": "punctuation.definition.string.end.tsx"
@@ -6036,5 +6045,5 @@
 			"match": "\\S+"
 		}
 	},
-	"version": "https://github.com/Microsoft/TypeScript-TmLanguage/commit/c7aa520a0e116e6325dcb616c559c26c928e7a95"
+	"version": "https://github.com/Microsoft/TypeScript-TmLanguage/commit/3b055aedfabce88de7299cc3f6086cb61f913a4b"
 }
