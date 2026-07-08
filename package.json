@@ -9,9 +9,6 @@
   "engines": {
     "vscode": "^1.36.0"
   },
-  "extensionKind": [
-    "workspace"
-  ],
   "workspaceTrust": {
     "request": "never"
   },
