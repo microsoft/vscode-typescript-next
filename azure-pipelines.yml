@@ -2,13 +2,14 @@
 trigger: none
 pr: none
 
-schedules:
-  - cron: '0 0 * * *'
-    displayName: Daily midnight build
-    branches:
-      include:
-        - main
-    always: true
+# Disabled to avoid picking up TS 7.
+# schedules:
+#   - cron: '0 0 * * *'
+#     displayName: Daily midnight build
+#     branches:
+#       include:
+#         - main
+#     always: true
 
 resources:
   repositories:
